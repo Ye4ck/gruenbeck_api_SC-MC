@@ -57,7 +57,7 @@
 | Parameter-ID | Bezeichnung | Erwarteter Wert | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
 | `D_B_1` | Starten der Regeneration / Regeneration aktiv |  | R/W |  |
-| `D_M_3_3` | Fehlerspeicher zurücksetzen |  | R/W |  |
+| `D_M_3_3` | Fehlerspeicher zurücksetzen |  | R/W | Code 189 erforderlich |
 
 ## 📊 Allgemeine Sensoren (Lesezugriff)
 
@@ -70,8 +70,8 @@
 | `D_Y_1` | Wasserverbrauch gestern | Int [l] | R |  |
 | `D_Y_3` | Salzverbrauch pro Jahr | Int [kg] | R |  |
 | `D_Y_5` | Aktueller Regenerationsschritt | Int | R | 0=keine, 1=Soletank, 2=Besalzen, 3=Verdrängen, 4=Rückspülen, 5=Erstfiltrat |
-| `D_Y_7` | Inbetriebnahme-Datum | String (TT.MM.JJJJ) | R |  |
 | `D_Y_6` | Software-Version | String | R |  |
+| `D_Y_7` | Inbetriebnahme-Datum | String (TT.MM.JJJJ) | R |  |
 | `D_Y_8_11` | Ergebnis letzter E-Mail Versand | Int | R | 0=keine, 1=OK, 2=Daten fehlerhaft, 3=kein Internet |
 | `D_Y_10_1` | Aktuelle Restkapazität AT1 | Int [%] | R |  |
 | `D_Y_10_2` | Aktuelle Restkapazität AT2 | Int [%] | R | nicht bei softliQ:SC |
@@ -80,7 +80,16 @@
 | `D_K_1` | Zähler Regenerationen | Int | R |  |
 | `D_K_2` | Zähler Weichwassermenge | Int [m³] | R | 0°dH Wasser |
 
-## 📈 Wasserverbrauch Historie
+## 📊 Zusätzliche Sensoren 
+
+| Parameter-ID | Bezeichnung | Erwarteter Wert | Zugriff | Kommentar / Werte |
+|:---|:---|:---|:---:|:---|
+| `D_E_1` | D_E_1 |  | R | Bezeichnung unbekannt |
+| `D_Y_9` | D_Y_9 |  | R | Bezeichnung unbekannt |
+| `D_Y_9_8` | D_Y_9_8 |  | R | evtl. Verbrauch letzte 8h? |
+| `D_Y_9_24` | D_Y_9_24 |  | R | evtl. Verbrauch letzte 24h? |
+
+## 📈 Wasserverbrauch Historie (D_Y_2_x)
 
 | Parameter-ID | Bezeichnung | Erwarteter Wert | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
@@ -112,7 +121,7 @@
 | `D_Y_2_26` | Wasserverbrauch vor 26 Tagen | Int [l] | R |  |
 | `D_Y_2_27` | Wasserverbrauch vor 27 Tagen | Int [l] | R |  |
 
-## 📈 Salzverbrauch Historie
+## 📈 Salzverbrauch Historie (D_Y_3_x)
 
 | Parameter-ID | Bezeichnung | Erwarteter Wert | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
@@ -131,7 +140,26 @@
 | `D_Y_3_13` | Salzverbrauch vor 13 Tagen | Double [kg] | R |  |
 | `D_Y_3_14` | Salzverbrauch vor 14 Tagen | Double [kg] | R |  |
 
-## 📈 Regeneration Historie
+## 📈 Regenerationszeit Historie (D_Y_4_x)
+
+| Parameter-ID | Bezeichnung | Erwarteter Wert | Zugriff | Kommentar / Werte |
+|:---|:---|:---|:---:|:---|
+| `D_Y_4_1` | Zeit letzte Regeneration 01 Tag vor aktueller |  | R |  |
+| `D_Y_4_2` | Zeit letzte Regeneration 02 Tage vor aktueller |  | R |  |
+| `D_Y_4_3` | Zeit letzte Regeneration 03 Tage vor aktueller |  | R |  |
+| `D_Y_4_4` | Zeit letzte Regeneration 04 Tage vor aktueller |  | R |  |
+| `D_Y_4_5` | Zeit letzte Regeneration 05 Tage vor aktueller |  | R |  |
+| `D_Y_4_6` | Zeit letzte Regeneration 06 Tage vor aktueller |  | R |  |
+| `D_Y_4_7` | Zeit letzte Regeneration 07 Tage vor aktueller |  | R |  |
+| `D_Y_4_8` | Zeit letzte Regeneration 08 Tage vor aktueller |  | R |  |
+| `D_Y_4_9` | Zeit letzte Regeneration 09 Tage vor aktueller |  | R |  |
+| `D_Y_4_10` | Zeit letzte Regeneration 10 Tage vor aktueller |  | R |  |
+| `D_Y_4_11` | Zeit letzte Regeneration 11 Tage vor aktueller |  | R |  |
+| `D_Y_4_12` | Zeit letzte Regeneration 12 Tage vor aktueller |  | R |  |
+| `D_Y_4_13` | Zeit letzte Regeneration 13 Tage vor aktueller |  | R |  |
+| `D_Y_4_14` | Zeit letzte Regeneration 14 Tage vor aktueller |  | R |  |
+
+## 📈 Regeneration Restkapazitäten (D_A_3_x)
 
 | Parameter-ID | Bezeichnung | Erwarteter Wert | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
@@ -174,6 +202,9 @@
 |:---|:---|:---|:---:|:---|
 | `D_K_3` | Durchfluss Spitzenwert (Parallel) | Double [m³/h] | R (Code) | nur MC32 |
 | `D_K_4` | Zeitzähler Nenndurchfluss überschritten | Double [min] | R (Code) |  |
+| `D_K_7` | Schrittanzeige Regenerationsventil |  | R |  |
+| `D_K_8` | Verbrauchskapazitätszahl |  | R |  |
+| `D_K_9` | Durchschnittsverbrauch letzten 03 Tage |  | R |  |
 | `D_K_14` | Spitzenwert AT1 | Double [m³/h] | R (Code) |  |
 | `D_K_15` | Überschreitung Nenndurchfluss AT1 | Double [min] | R (Code) |  |
 | `D_K_16` | Spitzenwert AT2 | Double [m³/h] | R (Code) | nur MC32 |
@@ -188,6 +219,13 @@
 | `D_K_20` | Rohwassermenge Verschneidung | Double [m³] | R (Code) | nur MC32 |
 | `D_K_21` | Nachspeisemenge | Double [l] | R (Code) |  |
 
+## 🔒 Impulsraten (Code 290)
+
+| Parameter-ID | Bezeichnung | Erwarteter Wert | Zugriff | Kommentar / Werte |
+|:---|:---|:---|:---:|:---|
+| `D_F_5` | Wasserzähler Weichwasser Impulsrate |  | R (Code) |  |
+| `D_F_6` | Wasserzähler Regeneration Impulsrate |  | R (Code) |  |
+
 ## 🌐 Netzwerk
 
 | Parameter-ID | Bezeichnung | Erwarteter Wert | Zugriff | Kommentar / Werte |
@@ -201,19 +239,28 @@
 | `D_C_3_7_2` | Access Point SSID | String | R |  |
 | `D_C_3_7_3` | Access Point Status | Int | R | 1=verbunden |
 
-## 📋 Weitere Sensoren
+## ⚠️ Fehlerspeicher (D_K_10_x, Code 245)
 
 | Parameter-ID | Bezeichnung | Erwarteter Wert | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
-| `D_K_7` | Schrittanzeige Regenerationsventil |  | R |  |
-| `D_K_8` | Verbrauchskapazitätszahl |  | R |  |
-| `D_K_9` | Durchschnittsverbrauch letzten 03 Tage |  | R |  |
-| `D_F_5` | Wasserzähler Weichwasser Impulsrate |  | R |  |
-| `D_F_6` | Wasserzähler Regeneration Impulsrate |  | R |  |
-| `D_E_1` | D_E_1 |  | R | Bezeichnung unbekannt |
-| `D_A_Y_5` | D_A_Y_5 |  | R | Bezeichnung unbekannt |
+| `D_K_10_1` | error 01 |  | R (Code) | Code 245 |
+| `D_K_10_2` | error 02 |  | R (Code) | Code 245 |
+| `D_K_10_3` | error 03 |  | R (Code) | Code 245 |
+| `D_K_10_4` | error 04 |  | R (Code) | Code 245 |
+| `D_K_10_5` | error 05 |  | R (Code) | Code 245 |
+| `D_K_10_6` | error 06 |  | R (Code) | Code 245 |
+| `D_K_10_7` | error 07 |  | R (Code) | Code 245 |
+| `D_K_10_8` | error 08 |  | R (Code) | Code 245 |
+| `D_K_10_9` | error 09 |  | R (Code) | Code 245 |
+| `D_K_10_10` | error 10 |  | R (Code) | Code 245 |
+| `D_K_10_11` | error 11 |  | R (Code) | Code 245 |
+| `D_K_10_12` | error 12 |  | R (Code) | Code 245 |
+| `D_K_10_13` | error 13 |  | R (Code) | Code 245 |
+| `D_K_10_14` | error 14 |  | R (Code) | Code 245 |
+| `D_K_10_15` | error 15 |  | R (Code) | Code 245 |
+| `D_K_10_16` | error 16 |  | R (Code) | Code 245 |
 
-## ❓ Unbekannte Parameter 
+## ❓ Unbekannte Parameter
 
 | Parameter-ID | Bezeichnung | Erwarteter Wert | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
@@ -230,23 +277,30 @@
 | `D_A_2_5` | D_A_2_5 |  | ? |  |
 | `D_A__3_1` | D_A__3_1 |  | ? |  |
 
-## ⚠️ Fehlerspeicher (error 01–16)
+---
 
-| Parameter-ID | Bezeichnung | Erwarteter Wert | Zugriff | Kommentar / Werte |
-|:---|:---|:---|:---:|:---|
-| `D_K_10_1` | error 01 |  | R |  |
-| `D_K_10_2` | error 02 |  | R |  |
-| `D_K_10_3` | error 03 |  | R |  |
-| `D_K_10_4` | error 04 |  | R |  |
-| `D_K_10_5` | error 05 |  | R |  |
-| `D_K_10_6` | error 06 |  | R |  |
-| `D_K_10_7` | error 07 |  | R |  |
-| `D_K_10_8` | error 08 |  | R |  |
-| `D_K_10_9` | error 09 |  | R |  |
-| `D_K_10_10` | error 10 |  | R |  |
-| `D_K_10_11` | error 11 |  | R |  |
-| `D_K_10_12` | error 12 |  | R |  |
-| `D_K_10_13` | error 13 |  | R |  |
-| `D_K_10_14` | error 14 |  | R |  |
-| `D_K_10_15` | error 15 |  | R |  |
-| `D_K_10_16` | error 16 |  | R |  |
+## API-Referenz
+
+```
+POST http://[IP]/mux_http/
+Content-Type: application/x-www-form-urlencoded
+
+# Wert lesen:
+id=0000&show=D_D_1~
+
+# Mehrere Werte lesen (max 1000 Byte Request+Response):
+id=0000&show=D_D_1|D_A_1_1|D_Y_5~
+
+# Wert schreiben + lesen:
+id=0000&edit=D_D_1>20&show=D_D_1~
+
+# Mit Zugangscode:
+id=0000&code=005&show=D_A_1_1~
+
+# Antwort (XML):
+# <data><D_D_1>20</D_D_1></data>
+```
+
+**Codes:** `005` = Austauscher-Details · `245` = Fehlerspeicher · `189` = Fehlerspeicher Reset · `290` = Impulsraten
+
+**Hinweis:** Min. 15 Sekunden Abstand zwischen Anfragen einhalten.
