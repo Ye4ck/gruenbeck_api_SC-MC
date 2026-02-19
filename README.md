@@ -24,6 +24,19 @@ id=0000&code=005&show=D_A_1_1~
 
 </details>
 
+<details>
+<summary> Codes </summary>
+
+**Codes:** 
+- 005 = Austauscher-Details & Ein-/Ausgang  
+- 121 = Hydraulische Werte
+- 142 = Kontrollparameter
+- 189 = Fehlerspeicher Reset
+- 245 = Fehlerspeicher & Zählerstände lesen
+- 290 = Impulsraten & Anlagen-Datensatz
+- 302 = Schrittabstände
+
+</details>
 ## ⚙️ Einstellungen (Schreib- & Lesezugriff)
 
 | Parameter-ID | Bezeichnung | Einheit | Zugriff | Kommentar / Werte |
