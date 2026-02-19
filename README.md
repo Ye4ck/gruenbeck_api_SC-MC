@@ -239,7 +239,7 @@
 | `D_F_8` | Referenzposition Transferventil suchen |  | R/W (Code) | Button |
 | `D_F_9` | Referenzposition Regenerationsventil suchen |  | R/W (Code) | Button |
 
-## 🔧 Hydraulische Werte (Code-geschützt)
+## 🔧 Hydraulische Werte (Code 121)
 
 | Parameter-ID | Bezeichnung | Einheit | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
