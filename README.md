@@ -2,6 +2,27 @@
 
 > **Zugriff:** `R` = Nur Lesen · `R/W` = Lesen & Schreiben · `R/W (Code)` = Code-geschützt · `?` = Unbekannt
 
+<details>
+<summary> API-Referenz </summary>
+  
+```
+POST http://[IP]/mux_http/
+Content-Type: application/x-www-form-urlencoded
+
+Wert lesen:
+id=0000&show=D_D_1~
+
+Mehrere Werte lesen (max 1000 Byte Request+Response):
+id=0000&show=D_D_1|D_A_1_1|D_Y_5~
+
+Wert schreiben + lesen:
+id=0000&edit=D_D_1>20&show=D_D_1~
+
+Mit Zugangscode:
+id=0000&code=005&show=D_A_1_1~
+```
+
+</details>
 
 ## ⚙️ Einstellungen (Schreib- & Lesezugriff)
 
@@ -334,30 +355,8 @@
 | `D_K_10_16` | Fehlerspeicher (16) |  | R (Code) | 0=kein Fehler |
 
 
----
 
-## API-Referenz
 
-```
-POST http://[IP]/mux_http/
-Content-Type: application/x-www-form-urlencoded
-
-# Wert lesen:
-id=0000&show=D_D_1~
-
-# Mehrere Werte lesen (max 1000 Byte Request+Response):
-id=0000&show=D_D_1|D_A_1_1|D_Y_5~
-
-# Wert schreiben + lesen:
-id=0000&edit=D_D_1>20&show=D_D_1~
-
-# Mit Zugangscode:
-id=0000&code=005&show=D_A_1_1~
-
-# Antwort (XML):
-# <data><D_D_1>20</D_D_1></data>
-```
-
-**Bekannte Codes:** `005` = Austauscher-Details · `189` = Fehlerspeicher Reset · `245` = Fehlerspeicher lesen · `290` = Impulsraten
+**Bekannte Codes:** 005 = Austauscher-Details & Ein-/Ausgang · 121 = Hydraulische Werte · 142 = Kontrollparameter · 189 = Fehlerspeicher Reset · 245 = Fehlerspeicher & Zählerstände lesen · 290 = Impulsraten & Anlagen-Datensatz · 302 = Schrittabstände
 
 **Hinweis:** Min. 15 Sekunden Abstand zwischen Anfragen. Max 1000 Byte pro Request+Response.
