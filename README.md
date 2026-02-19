@@ -1,4 +1,7 @@
-# Grünbeck softliQ:SC – Vollständige Parameterliste
+# 🇩🇪 Grünbeck softliQ:SC – Vollständige Parameterliste (Mehrsprachig / Multilingual)
+*Deutsch · Firmware v01.13*
+
+🇩🇪 Deutsch · [🇬🇧 English](softliQ_SC_parameters_EN.md) · [🇫🇷 Français](softliQ_SC_parameters_FR.md) · [🇮🇹 Italiano](softliQ_SC_parameters_IT.md)
 
 > **Zugriff:** `R` = Nur Lesen · `R/W` = Lesen & Schreiben · `R/W (Code)` = Code-geschützt · `?` = Unbekannt
 
