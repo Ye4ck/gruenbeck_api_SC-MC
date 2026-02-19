@@ -197,7 +197,7 @@
 | `D_C_3_7_2` | Access Point SSID | String | R |  |
 | `D_C_3_7_3` | Access Point Status | Int | R | 0=nicht verbunden, 1=verbunden |
 
-## 🔌 Programmierbarer Ein-/Ausgang (Code-geschützt)
+## 🔌 Programmierbarer Ein-/Ausgang (Code 005)
 
 | Parameter-ID | Bezeichnung | Einheit | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
@@ -205,7 +205,7 @@
 | `D_G_2` | Verzögerung Resthärtekontrolle | Min. | R/W (Code) |  |
 | `D_G_3` | Funktion Programmierbarer Eingang | Int | R/W (Code) | 0=Reg. Auslösung, 1=Reg. Sperre, 2=Störmeldeweiterleitung |
 
-## 🛡️ Kontrollparameter (Code-geschützt)
+## 🛡️ Kontrollparameter (Code 142)
 
 | Parameter-ID | Bezeichnung | Einheit | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
@@ -220,7 +220,7 @@
 | `D_H_10` | Reg.zeitpunkt & Kapazität über | d | R/W (Code) |  |
 | `D_H_11` | Restkapazität-Grenzwert | % | R/W (Code) |  |
 
-## 📋 Anlagen-Datensatz (Code-geschützt)
+## 📋 Anlagen-Datensatz (Code 005 & 290)
 
 | Parameter-ID | Bezeichnung | Einheit | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
@@ -233,7 +233,7 @@
 | `D_F_3_5` | Wochenzeitschaltuhr Freitag |  | R/W (Code) |  |
 | `D_F_3_6` | Wochenzeitschaltuhr Samstag |  | R/W (Code) |  |
 | `D_F_3_7` | Wochenzeitschaltuhr Sonntag |  | R/W (Code) |  |
-| `D_F_4` | Anlagentyp | Int | R/W (Code) | 0=Einzelanlage frei, 1=SC18, 2=SC23 |
+| `D_F_4` | Anlagentyp | Int | R/W (Code) | 0=Einzelanlage frei, 1=SC18, 2=SC23 Code 290|
 | `D_F_5` | WZ Weichwasser Impulsrate | l/Imp | R (Code) | Code 290 |
 | `D_F_6` | WZ Regeneration Impulsrate | l/Imp | R (Code) | Code 290 |
 | `D_F_8` | Referenzposition Transferventil suchen |  | R/W (Code) | Button |
@@ -263,7 +263,7 @@
 | `D_I_18` | Chlorstrom Sollwert | mA | R (Code) |  |
 | `D_I_20` | Ladung | mAmin | R/W (Code) |  |
 
-## 📐 Schrittabstände (Code-geschützt)
+## 📐 Schrittabstände (Code 302)
 
 | Parameter-ID | Bezeichnung | Einheit | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
@@ -276,7 +276,7 @@
 | `D_J_8` | Schritte Rückspülen → Umkehrposition | Steps | R/W (Code) |  |
 | `D_J_9` | Schritte Referenzpunktsuche | Steps | R/W (Code) |  |
 
-## 🔒 Zählerstände & Durchfluss-Details (Code-geschützt)
+## 🔒 Zählerstände & Durchfluss-Details (Code 245)
 
 | Parameter-ID | Bezeichnung | Einheit | Zugriff | Kommentar / Werte |
 |:---|:---|:---|:---:|:---|
